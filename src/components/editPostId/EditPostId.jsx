@@ -14,6 +14,7 @@ import {
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
 import ReactQuill from "react-quill";
+import { toast } from "react-toastify";
 
 const EditPostId = ({ data }) => {
   const router = useRouter();
@@ -107,6 +108,7 @@ const EditPostId = ({ data }) => {
     })
     if (res.status === 200) {
       const data = await res.json();
+      toast.success("Update successfully")
       router.push(`/posts/${data.id}`);
       router.refresh();
     }

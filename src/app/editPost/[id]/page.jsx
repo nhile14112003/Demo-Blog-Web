@@ -13,12 +13,12 @@ const getData = async (id) => {
   return res.json();
 };
 
-const editPostPage = async({ params }) => {
-  const {id} = params
+const editPostPage = async ({ params }) => {
+  const { id } = params
   const data = await getData(id);
   return (
     <div>
-      <EditPostId data={data}/>
+      <EditPostId data={data} />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import styles from "./deleteAndUpdatePost.module.css";
 import Image from "next/image";
+import { toast } from "react-toastify";
 
 const DeleteAndUpdatePost = ({ id }) => {
   const router = useRouter();
@@ -14,10 +15,8 @@ const DeleteAndUpdatePost = ({ id }) => {
 
     })
       .then(() => {
-        //toast.success('Updated Successfully')
+        toast.success("Delete successfully")
         router.refresh()
-        //router.push('/')
-        console.log("Successfull")
       })
 
       .catch((err) => {
